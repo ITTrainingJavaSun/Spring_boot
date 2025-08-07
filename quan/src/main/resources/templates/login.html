@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; margin-top: 50px; }
+        .login-container { border: 1px solid #ccc; padding: 20px; border-radius: 5px; width: 300px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], input[type="password"] { width: 95%; padding: 8px; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Please Login</h1>
+
+        <div th:if="${param.error}" class="form-group error">
+            Invalid username or password.
+        </div>
+        
+        <div th:if="${param.logout}" class="form-group">
+            You have been logged out.
+        </div>
+
+        <form th:action="@{/login}" method="post">
+            <div class="form-group">
+                <label for="username">User Name:</label>
+                <input type="text" id="username" name="username" autofocus="autofocus" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" />
+            </div>
+            <div class="form-group">
+                <button type="submit">Log in</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

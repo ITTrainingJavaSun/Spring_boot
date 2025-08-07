@@ -1,0 +1,25 @@
+# Compiled output
+/target/
+
+# Log files
+*.log
+
+# IDE files
+.project
+.classpath
+.settings/
+
+# Secrets - You may not have this file, but it's good practice
+application.properties
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Maven
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
+
+# Virtual machine crash logs
+hs_err_pid*
+replay_pid*
